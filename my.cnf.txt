@@ -13,7 +13,7 @@ connect_timeout = 5
 port = 3306
 bind-address = 0.0.0.0
 socket = /tmp/mysql.sock
-#datadir = /data
+datadir = /data
 #tmpdir = /tmp
 character_set_server = utf8mb4
 collation-server = utf8mb4_general_ci
@@ -38,7 +38,7 @@ sql-mode="STRICT_TRANS_TABLES,
 
 ## network
 max_allowed_packet = 16M
-max_connections = 1000
+max_connections = 500
 max_connect_errors = 10000
 wait_timeout = 30
 slave_net_timeout = 30
@@ -58,7 +58,7 @@ log_error = mysql-error.log
 #general_log_file = mysql.log
 
 ## binary log
-server_id = <%= server_id %>
+server_id = 1
 log_bin = mysql-bin
 log_slave_updates
 max_binlog_size = 512M
@@ -79,7 +79,7 @@ long_query_time = 0.1
 innodb_strict_mode
 innodb_buffer_pool_size = 1G
 innodb_data_file_path = ibdata1:10M:autoextend
-innodb_log_buffer_size = 16M
+innodb_log_buffer_size = 4M
 innodb_log_file_size = 512M
 innodb_doublewrite = 0
 innodb_read_io_threads = 8
